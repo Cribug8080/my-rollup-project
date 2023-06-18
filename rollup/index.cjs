@@ -3,7 +3,8 @@ const json = require('rollup-plugin-json');
 
 const inputOptions = {
   input: 'src/main.js',
-  plugins: [json()]
+  plugins: [json()],
+  perf: true,
 };
 
 const outputOptions = {
@@ -14,9 +15,10 @@ const outputOptions = {
 async function build() {
   const bundle = await rollup.rollup(inputOptions);
 
-  console.log(bundle.imports);
-  console.log(bundle.exports);
-  console.log(bundle.modules);
+  // console.log(bundle.imports);
+  // console.log(bundle.exports);
+  // console.log(bundle.modules);
+  const time = bundle.getTimings();
 
   const { code, map } = await bundle.generate(outputOptions);
 

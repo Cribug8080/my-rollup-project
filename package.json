@@ -6,11 +6,13 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup --config config/rollup.config.js -w",
     "build": "rollup --config config/rollup.config.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "acorn": "^8.8.1",
     "rollup": "^3.2.5",
     "rollup-plugin-json": "^4.0.0"
   }
